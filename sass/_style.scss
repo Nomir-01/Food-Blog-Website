@@ -1,0 +1,410 @@
+// ----------Importing ---------
+
+// importing other sass files
+
+
+@import "_variables.scss";
+@import "_starters.scss";
+@import "_mixins.scss";
+
+// ---------------header area--------------------
+
+#scrollto-top{
+    position: fixed;
+    background-color: $orange;
+    right: 40px;
+    bottom: 40px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: $shadow;
+    border: none;
+    color: white;
+    z-index: 99;
+
+    &:active{
+        background-color: $chilli-red;
+    }
+}
+
+
+
+
+// social icons
+
+.container-fluid{
+    width: 100%;
+    border-bottom: 1px solid #f2f2f2;
+    .left{
+        display: block;
+        margin: 12px 0;
+
+        li{
+            display: inline-block;
+            margin: 5px 10px;
+            
+            .social-icons img{
+                height: 24px;
+                width: 24px;              
+
+                &:hover{
+                    height: 36px;
+                    width: 36px;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+
+    .right{
+        display: block;
+        margin: 12px 0;
+        text-align: right;
+
+        li{
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 16px;
+            font-weight: 400;
+            a{
+                color: black;
+            }
+        }
+
+        div{
+
+            border: 1px solid black;
+            border-radius: 20px;
+            display: inline-flex;
+            margin-right: 30px;
+
+            img{
+                height: 12px;
+                width: 12px;
+                margin: 6px;
+            }
+
+            input{
+                outline: none;
+                border: none;
+                padding: 3px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+// social icons area ended
+
+// logo area
+
+.logo_area{
+
+    img{
+        margin: 25px;
+        height: 140px;
+        width: 340px;
+
+        @include mQ(450px){
+            margin: 15px;
+            height: 75px;
+            width: 190px;
+        }
+    }
+}
+
+// logo area ended
+
+//nav-bar
+.navbar{
+    button{
+        width: 100%;
+        background-color: $orange;
+
+        .navbar-toggler-icon{
+            color: white;
+        }
+    }
+}
+
+.navbar-nav{  
+    .nav-item{
+        padding: 5px 20px;
+        font-family: $serif;
+        font-weight: 500;        
+        text-transform: uppercase;
+        .nav-link, .dropdown-item{           
+            font-size: 14px;
+            text-transform: uppercase;
+            color: black;
+
+            &:hover, &:active{
+                color: $orange;
+                font-weight: bold;
+            }
+        } 
+    }
+}
+//navbar ended
+/* ======== Header Area End ======= */
+
+//faqs
+.faqs-section{
+    @include Content;
+}
+
+//about us
+
+.aboutus-section{
+    margin: 30px 80px;
+    h1{
+        margin: 30px 20px;
+    }
+
+    p{
+        @include p;
+    }
+
+    q{
+        @include q;
+    }
+}
+
+//contact us
+
+.contactus-section{
+    margin: 30px 80px;
+    h1{
+        @include secHeading;
+    }
+    h3{
+        padding: 5px 10px;
+        background-color: rgba($color: #b8161673, $alpha: 0.08);
+        border-left: 4px solid $chilli-red;
+    }
+
+    #googleMap{
+        margin: 30px 0;
+    }
+
+    p{
+        @include p;
+    }
+    
+    a{
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+/* ======== Welcome Area start ======= */
+
+.welcome-section{  
+    h1{
+        @include secHeading;
+    }
+}
+
+.carousel-inner{
+    width:100%;
+    max-height: 500px !important;
+
+    .carousel-caption{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include mQ(500px){
+            top: 40%;
+            h5{
+                font-size: 10px;
+            }
+        }
+    }
+  }
+
+.carousel-inner .carousel-item{
+    width: 100%;
+    height: 500px;
+    .blog-post__link{
+        display: inline-block;
+        padding: 6px 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: white;
+        background: $chilli-red;
+        border-radius: 7px;
+        text-decoration: none;
+    }
+
+    .blog-post__link:hover{
+        background: $orange;
+    }
+
+    .corousel-caption{
+       margin-bottom: 100px;
+        
+    }
+}
+// page content
+
+.pagecontent-section{
+    margin-bottom: 50px;
+    @include pc-card;
+
+    h1{
+        @include secHeading
+    }
+}
+
+//content-section
+.content-section{
+    .blog-post__info{
+        @include bp__info;
+    }
+    @include content-head;
+
+    .content-area{
+        @include Content;
+    }
+}
+
+
+
+// ourpicks-section
+
+.ourpicks-section{
+
+    margin-bottom: 50px;
+    @include card;
+
+    h1{
+        @include secHeading;
+    }
+
+    @include overlay;
+
+}
+
+//ourpicks-section ended
+
+// Popular section Area start
+
+
+.popular-section{   
+    margin-bottom: 50px;
+    @include card;
+    h1{
+        @include secHeading;
+    }
+
+    @include overlay;
+}
+
+//popular section ended
+
+// footer
+
+.footer-container{
+    background-color: $black;
+    .row{
+        padding: 50px;
+        background-color: inherit;
+    }
+
+    p{
+    color: $grey;
+    line-height: 200%;
+    padding: 10px 30px;}
+
+    img{
+        width: 230px;
+        height: 100px;
+    }
+
+    h1{
+        @include secHeading;
+        color: $orange;
+        font-family: $sans-serif;
+        font-size: 28px;
+        line-height: 250%;
+        text-align: left;
+    }
+
+    .footer-links{
+        ul{
+            display: block;
+            list-style: none;
+            padding: 0ex;
+                li{
+                padding: 5px;
+                color: $grey;
+                font-family: $serif;
+                border-bottom: 2px solid #404040;
+                text-align: left;
+                font-size: 18px;
+                font-weight: normal;
+                text-transform: uppercase;
+
+                &:hover{
+                    background-color: $chilli-red;
+                    color: $orange;
+                }
+
+                a{
+                    text-decoration: none;
+                   color: #777777;
+                }
+            }
+        }
+    }
+
+
+    .emailus{
+        font-family: $serif;
+
+        .email{
+            padding-top: 30px;
+
+            img{
+                width: 54px;
+                height: 54px;
+                margin: 30px 10px;
+            }
+        }
+        
+        .emaillink{
+            input{
+                width: 60%;
+                height: 40px;
+            }
+
+            a{
+                width: 40%;
+                height: 40px;
+                background-color: $orange;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                letter-spacing: 2px;
+                color: white;
+                font-size: 17px;
+
+                &:hover{
+                    background-color: $chilli-red;
+                    color: $orange;
+                }
+            }
+        }
+    }
+
+    span{
+        color: #777777;
+    }
+
+}
